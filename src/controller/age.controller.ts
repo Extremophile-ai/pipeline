@@ -1,10 +1,11 @@
-import { Response, Request } from "express";
+import { Response } from "express";
 import utilServices from "../services/util.services";
 import ageServices from "../services/age.services";
+import { IRequest } from "../interface/IRequest.interface";
 
 
 export default {
-  async getAgeFromDob(req: Request, res: Response) {
+  async getAgeFromDob(req: IRequest, res: Response) {
     try {
       const dob = req.query.dob as string
       if(!dob){
