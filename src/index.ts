@@ -1,7 +1,7 @@
 import express from "express"
 import cors from "cors";
 import dotenv from "dotenv"
-import ageRoutes from "../src/routes/age.routes"
+import ageRoutes from "./routes/age.routes"
 import { limiter } from "./middleware/limiter.middleware";
 
 const app = express()
