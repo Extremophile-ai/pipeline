@@ -1,19 +1,14 @@
 export default {
   validateDob(dob: string) {
     try {
-      const validDateFormatRegex = /^\d{4}-\d{2}-\d{2}$/;
-      if (dob.match(validDateFormatRegex) === null) {
-        throw new Error("valid dob format is: YYYY-MM-DD")
-      }
-
-      const isValiddate = new Date(dob);
-      const timestamp = isValiddate.getTime();
-    
-      if (typeof timestamp !== 'number' || Number.isNaN(timestamp)) {
+      const parseDob = parseInt(dob)
+      const isValidDate = new Date(parseDob);
+      const currentDate = new Date()
+      const timestamp = isValidDate.getTime();
+      if (typeof timestamp !== 'number' || Number.isNaN(timestamp) || isValidDate > currentDate) {
         throw new Error("please enter a valid date")
-      }
-
-      return true
+      } 
+      return isValidDate
     } catch (error) {
       throw error
     }
