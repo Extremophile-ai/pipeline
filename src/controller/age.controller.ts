@@ -11,18 +11,17 @@ export default {
       if(!dob){
         throw new Error("please enter a valid date of birth")
       }
-
       const validateDob = utilServices.validateDob(dob)
       if(validateDob) {
-        const age = await ageServices.getPersonAge(dob)
+        const age = await ageServices.getPersonAge(validateDob)
         return res.status(200).json({
-          message: `your current age is ${age}`
+          age
         })
       }
      
     } catch (error: any) {
       return res.status(400).json({
-        errorMessage: error.message
+        error: error.message
       })
     }
   }
