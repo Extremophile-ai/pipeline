@@ -6,8 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
-    "start": "export NODE_ENV=prod && tsc && node dist/index.js",
-    "dev": "export NODE_ENV=dev && npm run build && node dist/index.js",
+    "start": "npm run build && node dist/index.js",
     "dev:watch": "export NODE_ENV=dev && npm run build && nodemon src/index.ts"
   },
   "repository": {
