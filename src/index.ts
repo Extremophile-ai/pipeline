@@ -13,7 +13,7 @@ app.use(express.json({ limit: "50mb" }))
 
 app.use("/", limiter, ageRoutes)
 
-app.get("/", (_req, res) => {
+app.get("/", (req, res) => {
   res.send("API Is Running!!!")
 })
 console.log("process.env.PORT =>", process.env.PORT)
