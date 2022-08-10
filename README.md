@@ -1,3 +1,5 @@
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/bd2d814397f3467c93c3ae6c48d2fdeb)](https://www.codacy.com/gh/Extremophile-ai/pipeline/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Extremophile-ai/pipeline&amp;utm_campaign=Badge_Grade)
+
 # Backend Assessment
 
 Build and deploy a very simple API that does the following
