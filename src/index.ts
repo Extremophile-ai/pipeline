@@ -1,7 +1,7 @@
-import express from "express"
+import express from "express";
 import cors from "cors";
-import dotenv from "dotenv"
-import ageRoutes from "./routes/age.routes"
+import dotenv from "dotenv";
+import ageRoutes from "./routes/age.routes";
 import { limiter } from "./middleware/limiter.middleware";
 
 const app = express()
@@ -9,14 +9,14 @@ const app = express()
 dotenv.config();
 
 app.use(cors());
-app.use(express.json({ limit: "50mb" }))
+app.use(express.json({ limit: "50mb" }));
 
-app.use("/", limiter, ageRoutes)
+app.use("/", limiter, ageRoutes);
 
 app.get("/", (req, res) => {
-  res.send("API Is Running!!!")
+  res.send("API Is Running!!!");
 })
-console.log("process.env.PORT =>", process.env.PORT)
+console.log("process.env.PORT =>", process.env.PORT);
 
 const PORT = process.env.PORT || 4000;
 
